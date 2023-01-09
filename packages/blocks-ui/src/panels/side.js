@@ -23,7 +23,7 @@ export default () => {
         pb: 3
       }}
     >
-      <Tabs index={activeTabIndex} onChange={index => updateActiveTab(index)}>
+      <Tabs index={activeTabIndex} onChange={(index) => updateActiveTab(index)}>
         <TabList
           sx={{
             display: 'flex',
@@ -39,9 +39,9 @@ export default () => {
           <Tab sx={getTabStyles({ isActive: activeTab === 'components' })}>
             Components
           </Tab>
-          <Tab sx={getTabStyles({ isActive: activeTab === 'theme' })}>
+          {/* <Tab sx={getTabStyles({ isActive: activeTab === 'theme' })}>
             Theme
-          </Tab>
+          </Tab> */}
         </TabList>
         <TabPanels>
           <TabPanel>

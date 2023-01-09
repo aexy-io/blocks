@@ -25,6 +25,7 @@ const CodeMode = () => {
 
   const onCodeChange = (code) => {
     try {
+      window.localStorage.setItem('blocks-code', code)
       editCode(code)
     } catch (e) {
       // do nothing as the errors are displayed in the editor

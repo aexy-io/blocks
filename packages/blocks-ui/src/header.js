@@ -1,15 +1,15 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
 import { useState } from 'react'
-import { Code, Layers, Monitor, Grid } from 'react-feather'
+import { Code, Layers, Grid } from 'react-feather'
 
-import pkg from '../package.json'
+// import pkg from '../package.json'
 
 import { useEditor } from './providers/editor'
 import { SegmentedControl } from './segmented-control'
 import { IconButton } from './ui'
 
-const { version } = pkg
+// const { version } = pkg
 
 export const headerHeight = 60
 
@@ -20,15 +20,15 @@ const MODES = [
     icon: Layers
   },
   {
-    key: 'viewports',
-    label: 'Viewports Mode',
-    icon: Monitor
-  },
-  {
     key: 'code',
     label: 'Code Mode',
     icon: Code
   }
+  // {
+  //   key: 'viewports',
+  //   label: 'Viewports Mode',
+  //   icon: Monitor
+  // },
 ]
 
 const ToggleXRay = () => {
@@ -40,7 +40,7 @@ const ToggleXRay = () => {
       icon={Grid}
       isActive={isActive}
       onClick={() => editorState.update({ ...editorState, xray: !isActive })}
-      disabled={editorState.mode === MODES[2].key}
+      disabled={editorState.mode === MODES[1].key}
     />
   )
 }
@@ -102,11 +102,6 @@ const Logo = () => (
       ml: '-4px'
     }}
   >
-    <img
-      src="https://user-images.githubusercontent.com/1424573/61592179-e0fda080-ab8c-11e9-9109-166cc7c86b43.png"
-      alt="blocks logo"
-      width="38"
-    />
     <div
       sx={{
         display: 'grid',
@@ -115,16 +110,7 @@ const Logo = () => (
         gridGap: 2
       }}
     >
-      Blocks
-      <span
-        sx={{
-          fontSize: 0,
-          mt: '2px',
-          ml: 2
-        }}
-      >
-        v{version}
-      </span>
+      Theme Editor
     </div>
   </a>
 )
